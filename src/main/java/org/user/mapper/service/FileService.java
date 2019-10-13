@@ -18,4 +18,13 @@ public class FileService {
         }
         return linesList;
     }
+    public boolean isPathValid(String path){
+        if(!new File(path).exists()){
+            return false;
+        }
+        if(!new File(path).isFile()){
+            return false;
+        }
+        return true;
+    }
 }
