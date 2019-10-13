@@ -1,6 +1,6 @@
 package org.user.mapper.model;
 
-import sun.util.calendar.LocalGregorianCalendar;
+import org.user.mapper.service.UserService;
 
 import java.time.LocalDate;
 
@@ -33,6 +33,7 @@ public class User {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+        setAge(UserService.calculateUserAge(this));
     }
 
     public String getPhoneNumber() {

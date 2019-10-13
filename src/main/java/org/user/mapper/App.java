@@ -6,6 +6,7 @@ import org.user.mapper.service.UserService;
 
 import java.io.File;
 import java.util.List;
+import java.util.Scanner;
 
 public class App
 {
@@ -17,5 +18,10 @@ public class App
         UserService userService = new UserService();
         List<User> users = userService.createUsers(linesList);
         users.forEach(System.out::println);
+        userService.printUsers(users);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert file path (Windows )");
+        String path = scanner.nextLine();
     }
 }
