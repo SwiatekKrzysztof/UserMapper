@@ -1,6 +1,8 @@
 package org.user.mapper;
 
+import org.user.mapper.model.User;
 import org.user.mapper.service.FileService;
+import org.user.mapper.service.UserService;
 
 import java.io.File;
 import java.util.List;
@@ -11,7 +13,9 @@ public class App
     {
         FileService fileService = new FileService();
         List<String> linesList = fileService.parseTextFile("C:\\Users\\48501\\TestFolder\\test.txt");
-        linesList.forEach(System.out::println);
-
+        //linesList.forEach(System.out::println);
+        UserService userService = new UserService();
+        List<User> users = userService.createUsers(linesList);
+        users.forEach(System.out::println);
     }
 }
