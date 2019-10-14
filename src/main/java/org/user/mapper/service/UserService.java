@@ -1,6 +1,7 @@
 package org.user.mapper.service;
 
 import org.user.mapper.model.User;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -13,14 +14,13 @@ public class UserService {
         String[] dateLine;
         for (int i = 0; i < linesList.size(); i++) {
             line = linesList.get(i).split(",");
+            if(line.length<3){
+                continue;
+            }
             User newUser = new User();
             newUser.setName(line[0]);
             newUser.setSurname(line[1]);
-            dateLine = line[2].split("-");
-            newUser.setBirthDate(LocalDate.of(
-                    Integer.parseInt(dateLine[0]),
-                    Integer.parseInt(dateLine[1]),
-                    Integer.parseInt(dateLine[2])));
+            newUser.setBirthDate(LocalDate.parse(line[2]));
             if (line.length < 4) {
                 newUser.setPhoneNumber("UNKNOWN");
             } else {

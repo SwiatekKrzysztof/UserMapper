@@ -1,3 +1,0 @@
-John,Smith,1980-02-02,515616717
-Joe,Kowalsky,1999-11-11
-Henry,Podolski,1877-11-01,123123123

@@ -3,6 +3,7 @@ package org.user.mapper.model;
 import org.user.mapper.service.UserService;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class User {
     private String name;
@@ -10,6 +11,22 @@ public class User {
     private LocalDate birthDate;
     private String phoneNumber;
     private int age;
+
+    public User() {
+    }
+
+    public User(String name, String surname, LocalDate birthDate) {
+        this.name = name;
+        this.surname = surname;
+        setBirthDate(birthDate);
+    }
+
+    public User(String name, String surname, LocalDate birthDate, String phoneNumber) {
+        this.name = name;
+        this.surname = surname;
+        setBirthDate(birthDate);
+        this.phoneNumber = phoneNumber;
+    }
 
     public String getName() {
         return name;
